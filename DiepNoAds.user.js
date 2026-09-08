@@ -2,7 +2,7 @@
 // @name         DiepNoAds
 // @version      2026-09-08
 // @description  Removing ads from 2d ball game
-// @author       You
+// @author       VeilaVnh
 // @match        https://diep.io/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=diep.io
 // ==/UserScript==
