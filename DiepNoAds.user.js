@@ -10,6 +10,17 @@
 (()=>{
   'use strict';
   const a = document.getElementById("ad-holders"); if (a) a.remove();
-  const resize = (_) => { const c = document.getElementById("canvas"); if (c) c.setAttribute("height", document.body.scrollHeight); };
+
+  const c = document.getElementById("canvas");
+  const resize = (_) => { if (c) c.setAttribute("height", document.body.scrollHeight); };
   resize(); addEventListener("resize", resize);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const o = new MutationObserver((mutations) => {
+      mutations.forEach((m) => {
+        if (m.type === "attributes" && c.attributes.height != document.body.scrollHeight) resize();
+      });
+    });
+    o.observe(c, { attributes: true });
+  });
 })();
